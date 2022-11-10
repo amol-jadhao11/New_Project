@@ -1,0 +1,32 @@
+﻿@model IEnumerable<New_Project.Models.Employee>
+@using Kendo.Mvc.UI
+@using New_Project.Models
+@using New_Project.ViewModel
+
+
+@{
+    ViewBag.Title = "GetAllEmp";
+}
+
+
+
+
+@*<h2>GetAllEmp</h2>
+
+@(
+
+    Html.Kendo().Grid <EmployeeViewModel>().Name("grid").Columns (columns =>
+    {
+        columns.Bound(c => c.EmpID).Width("5 px").Title("EmployeeID");
+        columns.Bound(c => c.EmpName);
+        columns.Bound(c => c.Designation);
+        columns.Bound(c => c.Department);
+        columns.Bound(c => c.JoiningDate);
+    }).HtmlAttributes( new { Style = "Hight : 500 px"})
+    .Sortable()
+    .Groupable()
+    .Scrollable()
+    .Pageable()
+    .DataSource(dataSource => dataSource.Ajax().Read(read => read.Action("GetAllEmp", controllerName :"CrudMVC"))
+    .PageSize(5).Model(model => model.Id(p => p.EmpID)))
+    )*@
